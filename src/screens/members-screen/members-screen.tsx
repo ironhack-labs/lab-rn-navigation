@@ -1,17 +1,18 @@
 import React from 'react';
-import {View} from 'react-native';
+import {FlatList} from 'react-native';
 
 import type {MembersProps} from '../../navigation/main-navigation.types';
-import {MenuButton} from '../../components';
+import {UserCard} from '../../components';
 
-export const MembersScreen = ({navigation}: MembersProps) => {
+export const MembersScreen = ({route}: MembersProps) => {
+  const {users} = route.params;
+
   return (
-    <View>
-      <View style={{rowGap: 20}}>
-        <MenuButton onPress={() => navigation.navigate('Home')}>
-          Home
-        </MenuButton>
-      </View>
-    </View>
+    <FlatList
+      contentContainerStyle={{rowGap: 20}}
+      data={users}
+      renderItem={({item: user}) => <UserCard {...user} />}
+      keyExtractor={item => item.email}
+    />
   );
 };

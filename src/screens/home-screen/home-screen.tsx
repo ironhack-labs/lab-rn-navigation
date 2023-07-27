@@ -3,20 +3,17 @@ import {View} from 'react-native';
 
 import type {HomeProps} from '../../navigation/main-navigation.types';
 import {MenuButton} from '../../components';
-import {USER_DATA} from '../../__mocks__';
+import {MEMBERS_DATA, USER_DATA} from '../../__mocks__';
 
-export const HomeScreen = ({navigation}: HomeProps) => {
-  return (
-    <View>
-      <View style={{rowGap: 20}}>
-        <MenuButton
-          onPress={() => navigation.navigate('Profile', {user: USER_DATA})}>
-          Profile
-        </MenuButton>
-        <MenuButton onPress={() => navigation.navigate('Members')}>
-          Members
-        </MenuButton>
-      </View>
-    </View>
-  );
-};
+export const HomeScreen = ({navigation}: HomeProps) => (
+  <View style={{rowGap: 20}}>
+    <MenuButton
+      onPress={() => navigation.navigate('Profile', {user: USER_DATA})}>
+      Profile
+    </MenuButton>
+    <MenuButton
+      onPress={() => navigation.navigate('Members', {users: MEMBERS_DATA})}>
+      Members
+    </MenuButton>
+  </View>
+);

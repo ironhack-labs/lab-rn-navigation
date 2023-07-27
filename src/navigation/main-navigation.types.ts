@@ -7,7 +7,9 @@ export type RootStackParamList = {
   Profile: {
     user: User;
   };
-  Members: undefined;
+  Members: {
+    users: User[];
+  };
 };
 
 export type NavigationProps = StackNavigationProp<RootStackParamList>;
