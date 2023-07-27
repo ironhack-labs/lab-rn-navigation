@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, Image} from 'react-native';
 import {StackNavigationProp} from '@react-navigation/stack';
 import {RootStackParamList} from '../../types';
 
@@ -10,25 +10,25 @@ type MembersScreenProps = {
 const MembersScreen: React.FC<MembersScreenProps> = ({navigation}) => {
   const Members = [
     {
-      name: 'Alice',
+      name: 'Morris',
       lastName: 'Johnson',
       email: 'alice.johnson@example.com',
       phone: '987-654-3210',
-      avatar: 'https://example.com/alice_avatar.jpg',
+      avatar: 'https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg',
     },
     {
-      name: 'Alice',
+      name: 'Travis',
       lastName: 'Johnson',
       email: 'alice.johnson@example.com',
       phone: '987-654-3210',
-      avatar: 'https://example.com/alice_avatar.jpg',
+      avatar: 'https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg',
     },
     {
-      name: 'Alice',
+      name: 'Scott',
       lastName: 'Johnson',
       email: 'alice.johnson@example.com',
       phone: '987-654-3210',
-      avatar: 'https://example.com/alice_avatar.jpg',
+      avatar: 'https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg',
     },
   ];
 
@@ -40,6 +40,7 @@ const MembersScreen: React.FC<MembersScreenProps> = ({navigation}) => {
           <Text>Last Name: {member.lastName}</Text>
           <Text>Email: {member.email}</Text>
           <Text>Phone: {member.phone}</Text>
+          <Image width={50} height={50} source={{uri: 'https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg'}}/>
         </View>
       ))}
 

@@ -14,7 +14,7 @@ const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
     lastName: 'Doe',
     email: 'john.doe@example.com',
     phone: '123-456-7890',
-    avatar: 'https://example.com/avatar.jpg',
+    avatar: 'https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg',
   };
 
   return (
