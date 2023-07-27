@@ -2,17 +2,14 @@ import React from 'react';
 import {View} from 'react-native';
 
 import {UserCard} from '../../components';
+import {ProfileProps} from '../../navigation/main-navigation.types';
 
-export const ProfileScreen = () => {
+export const ProfileScreen = ({route}: ProfileProps) => {
+  const {user} = route.params;
+
   return (
     <View>
-      <UserCard
-        name="Ramses"
-        lastName="De La Peña"
-        email="ramses.delapena@digitalfemsa.com"
-        phone="8443813001"
-        avatar="https://www.gravatar.com/avatar/219e08dc1094659300ca356a9a960305"
-      />
+      <UserCard {...user} />
     </View>
   );
 };
