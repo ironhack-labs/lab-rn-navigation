@@ -13,12 +13,29 @@ interface Props {
 }
 
 const HomeScreen = ({navigation}: Props) => {
+
+  const user: object[] = [{
+    name: 'AlyssaSSSS',
+    lastName: 'Graham',
+    email: 'alyssa.graham@example.com',
+    phone: '(342) 531-3456',
+    avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+  },
+  {
+    name: 'Alyssa',
+    lastName: 'Graham',
+    email: 'alyssa.graham@example.com',
+    phone: '(342) 531-3456',
+    avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
+  },
+];
+
   return (
     <View style={styles.container}>
       <ScreenTitle title="Bienvenido a esta nueva App" />
       <CustomButton
         title="Go to Profile"
-        onPress={() => navigation.navigate('Profile')}
+        onPress={() => navigation.navigate('Profile', {userdata: user})}
       />
       <CustomButton
         title="Go to Team Members"

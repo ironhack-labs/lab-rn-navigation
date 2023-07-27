@@ -5,10 +5,10 @@ import {View, Text, Image, StyleSheet} from 'react-native';
 import ScreenTitle from './TitleScreens';
 
 interface User {
-  name: string;
-  lastName: string;
-  email: string;
-  phone: string;
+  name?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
   avatar?: string;
 }
 

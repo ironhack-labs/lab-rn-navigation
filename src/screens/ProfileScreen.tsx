@@ -4,24 +4,20 @@ import UserCard from '../components/UserCard';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 //Components
-import ScreenTitle from '../components/TitleScreens';
 import CustomButton from '../components/CustomBustton';
 
 //Utils
-import {ProfileScreenNavigationProp} from '../utils/Types';
+import {ProfileScreenNavigationProp, ProfileScreenRouteProp} from '../utils/Types';
 
 interface Props {
+  route: ProfileScreenRouteProp;
   navigation: ProfileScreenNavigationProp;
 }
 
-const ProfileScreen = ({navigation}: Props) => {
-  const user = {
-    name: 'Alyssa',
-    lastName: 'Graham',
-    email: 'alyssa.graham@example.com',
-    phone: '(342) 531-3456',
-    avatar: 'https://randomuser.me/api/portraits/women/2.jpg',
-  };
+const ProfileScreen = ({navigation, route}: Props) => {
+
+  const {userdata} = route.params;
+  const user = userdata[0];
 
   return (
     <SafeAreaView style={styles.container}>

@@ -15,7 +15,7 @@ export interface Props {
 
 export type RootStackParamList = {
   Home: undefined;
-  Profile: undefined;
+  Profile: {userdata: object[]};
   Team: undefined;
 };
 
