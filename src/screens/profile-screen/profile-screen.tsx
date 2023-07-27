@@ -1,17 +1,24 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import type {NavigationProps} from '../../navigation/main-navigation.types';
+import {MenuButton, SectionTitle} from '../../components';
 
 export const ProfileScreen = () => {
   const navigation = useNavigation<NavigationProps>();
 
   return (
     <View>
-      <Text>Profile Screen</Text>
-      <Button onPress={() => navigation.navigate('Home')} title="Home" />
-      <Button onPress={() => navigation.navigate('Members')} title="Members" />
+      <SectionTitle>Profile Screen</SectionTitle>
+      <View style={{rowGap: 20}}>
+        <MenuButton onPress={() => navigation.navigate('Home')}>
+          Home
+        </MenuButton>
+        <MenuButton onPress={() => navigation.navigate('Members')}>
+          Members
+        </MenuButton>
+      </View>
     </View>
   );
 };
