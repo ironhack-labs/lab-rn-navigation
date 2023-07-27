@@ -2,9 +2,9 @@ import React from 'react';
 import {View} from 'react-native';
 
 import {UserCard} from '../../components';
-import {ProfileProps} from '../../navigation/main-navigation.types';
+import {ProfileScreenProps} from '../../navigation/main-navigation.types';
 
-export const ProfileScreen = ({route}: ProfileProps) => {
+export const ProfileScreen = ({route}: ProfileScreenProps) => {
   const {user} = route.params;
 
   return (

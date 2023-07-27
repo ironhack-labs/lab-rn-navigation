@@ -1,10 +1,10 @@
 import React from 'react';
 import {FlatList} from 'react-native';
 
-import type {MembersProps} from '../../navigation/main-navigation.types';
+import type {MembersScreenProps} from '../../navigation/main-navigation.types';
 import {UserCard} from '../../components';
 
-export const MembersScreen = ({route}: MembersProps) => {
+export const MembersScreen = ({route}: MembersScreenProps) => {
   const {users} = route.params;
 
   return (

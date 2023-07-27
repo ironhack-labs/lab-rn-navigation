@@ -13,6 +13,12 @@ export type RootStackParamList = {
 };
 
 export type NavigationProps = StackNavigationProp<RootStackParamList>;
-export type HomeProps = StackScreenProps<RootStackParamList, 'Home'>;
-export type ProfileProps = StackScreenProps<RootStackParamList, 'Profile'>;
-export type MembersProps = StackScreenProps<RootStackParamList, 'Members'>;
+export type HomeScreenProps = StackScreenProps<RootStackParamList, 'Home'>;
+export type ProfileScreenProps = StackScreenProps<
+  RootStackParamList,
+  'Profile'
+>;
+export type MembersScreenProps = StackScreenProps<
+  RootStackParamList,
+  'Members'
+>;
