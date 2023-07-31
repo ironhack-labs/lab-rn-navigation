@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, View} from 'react-native';
 import {Profile} from '../types/user';
+import {useNavigation} from '@react-navigation/native';
 
 const myProfile: Profile = {
   name: 'Geyser',
@@ -34,17 +35,12 @@ const team: Profile[] = [
   },
 ];
 
-const HomeScreen = ({navigation}) => {
+const HomeScreen = () => {
+  const {navigate} = useNavigation();
   return (
     <View>
-      <Button
-        title="Profile"
-        onPress={() => navigation.navigate('Profile', myProfile)}
-      />
-      <Button
-        title="Team members"
-        onPress={() => navigation.navigate('Team', team)}
-      />
+      <Button title="Profile" onPress={() => navigate('Profile', myProfile)} />
+      <Button title="Team members" onPress={() => navigate('Team', team)} />
     </View>
   );
 };

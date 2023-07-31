@@ -1,17 +1,19 @@
 import React from 'react';
 import {Button, StyleSheet, View} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
 import UserCard from '../components/UserCard';
 import {Profile} from '../types/user';
+import {useNavigation} from '@react-navigation/native';
 
 const TeamScreen = props => {
-    const team = props.route.params;
+  const team = props.route.params;
+  const {goBack} = useNavigation();
   return (
     <View style={styles.container}>
-      <Button title="Back" onPress={props.navigation.goBack} />
+      <Button title="Back" onPress={goBack} />
       <ScrollView style={styles.scrollView}>
-        {team.map((data: Profile) => (
-          <UserCard data={data} />
+        {team.map((data: Profile, index: number) => (
+          <UserCard key={index} data={data} />
         ))}
       </ScrollView>
     </View>
