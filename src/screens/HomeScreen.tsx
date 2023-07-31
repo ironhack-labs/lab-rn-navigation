@@ -1,13 +1,6 @@
 import React from 'react';
 import {Button, View} from 'react-native';
-
-type Profile = {
-  name: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  avatar: number;
-};
+import {Profile} from '../types/user';
 
 const myProfile: Profile = {
   name: 'Geyser',
@@ -17,6 +10,30 @@ const myProfile: Profile = {
   avatar: require('../../assets/profile.png'),
 };
 
+const team: Profile[] = [
+  {
+    name: 'Geyser',
+    lastName: 'Ramírez',
+    email: 'geyser@mydomain.com',
+    phone: '9991369509',
+    avatar: require('../../assets/profile.png'),
+  },
+  {
+    name: 'Jorge',
+    lastName: 'Gómez',
+    email: 'jorge@mydomain.com',
+    phone: '2938497238',
+    avatar: require('../../assets/profile.png'),
+  },
+  {
+    name: 'Margarita',
+    lastName: 'Gonzalez',
+    email: 'margarita@mydomain.com',
+    phone: '9898434938',
+    avatar: require('../../assets/profile.png'),
+  },
+];
+
 const HomeScreen = ({navigation}) => {
   return (
     <View>
@@ -24,7 +41,10 @@ const HomeScreen = ({navigation}) => {
         title="Profile"
         onPress={() => navigation.navigate('Profile', myProfile)}
       />
-      <Button title="Team members" />
+      <Button
+        title="Team members"
+        onPress={() => navigation.navigate('Team', team)}
+      />
     </View>
   );
 };
