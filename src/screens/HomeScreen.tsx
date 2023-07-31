@@ -12,7 +12,7 @@ type Profile = {
 const myProfile: Profile = {
   name: 'Geyser',
   lastName: 'Ramírez',
-  email: 'geyser.gallardo@digitalfemsa.com',
+  email: 'geyser@mydomain.com',
   phone: '9991369509',
   avatar: require('../../assets/profile.png'),
 };
